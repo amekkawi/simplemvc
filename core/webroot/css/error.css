@@ -1,0 +1,25 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background-color: #333333;
+	padding: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 90%;
+}
+#Container {
+	background-color: #FFFFFF;
+	padding: 16px;
+	padding-left: 70px;
+	background-image: url(../images/error48x48.png);
+	background-repeat: no-repeat;
+	background-position: 13px center;
+}
+h1 {
+	color: #990000;
+	padding-bottom: 4px;
+}
+code {
+	color: #0033DD;
+}

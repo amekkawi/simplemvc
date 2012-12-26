@@ -1,0 +1,17 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    RewriteCond $0 !^core/webroot/ [NC]
+    RewriteCond $0 !^core/start\.php$ [NC]
+    RewriteRule ^core/(.*)$ core/webroot/$1 [QSA,L]
+    
+    RewriteCond $0 !^core/ [NC]
+    RewriteCond $0 !^app/webroot/ [NC]
+    RewriteRule .* app/webroot/$0 [env=dispatch:$0]
+    
+    RewriteRule ^app/webroot/$ core/start.php?dispatch= [QSA,L]
+    
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^app/webroot/(.+)$ core/start.php?dispatch=%{ENV:dispatch} [QSA,L]
+</IfModule>
